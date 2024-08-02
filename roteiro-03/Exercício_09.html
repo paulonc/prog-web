@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 09</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function calcularMedia(numeros) {
+                var total = 0;
+                for (let i = 0; i < numeros.length; i++) {
+                    total += numeros[i];
+                }
+                media = total / numeros.length;
+                return media;
+            }
+
+            function calcularPercentual(parte, total) {
+                return (parte / total) * 100;
+            }
+
+            function calcularEstatisticas() {
+                var numeros = document.getElementById("txt").value;
+                numeros = numeros.split(",").map(Number);
+                
+                var positivos = 0;
+                var negativos = 0;
+                numeros.forEach(numero => {
+                    if (numero > 0) {
+                        positivos++;
+                    } else {
+                        negativos++;
+                    }
+                });
+                
+                var total = numeros.length;
+                var media = calcularMedia(numeros);
+                var percentualPositivos = calcularPercentual(positivos, total);
+                var percentualNegativos = calcularPercentual(negativos, total);
+
+                document.write("A média é: ", media.toFixed(2), "<br>");
+                document.write("Quantidade de valores positivos: ", positivos, "<br>");
+                document.write("Quantidade de valores negativos: ", negativos, "<br>");
+                document.write("Percentual de valores positivos: ", percentualPositivos.toFixed(2), "%<br>");
+                document.write("Percentual de valores negativos: ", percentualNegativos.toFixed(2), "%<br>"); 
+            }
+        </script>
+    </head>
+
+    <body>
+        Números: <input type="text" id="txt">
+        <input type="button" value="Estatísticas" onclick="calcularEstatisticas()">
+    </body>
+
+</html> 

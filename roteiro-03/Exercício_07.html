@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 07</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function somaImparesMultiplosDeTres() {
+                var numeros = document.getElementById("txt").value;
+                numeros = numeros.split(",").map(Number);
+                var soma = 0;
+                for (let i = 0; i < numeros.length; i++) {
+                    const numero = numeros[i];
+                    if (numero % 2 !== 0 && numero % 3 === 0) {
+                        soma += numero;
+                    }
+                }
+                document.write("A soma dos ímpares múltiplos de 3 é: ", soma);
+            }
+        </script>
+    </head>
+
+    <body>
+        Números: <input type="text" id="txt">
+        <input type="button" value="Soma ímpares múltiplos de 3" onclick="somaImparesMultiplosDeTres()">
+    </body>
+
+</html> 

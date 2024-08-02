@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 06</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function ordenaLista() {
+                var numeros = document.getElementById("txt").value;
+                numeros = numeros.split(",").map(Number);
+                numeros.sort((a,b) => a - b);
+                document.write("A lista ordenada é: " + numeros);
+            }
+        </script>
+    </head>
+
+    <body>
+        Números: <input type="text" id="txt">
+        <input type="button" value="Ordenar lista" onclick="ordenaLista()">
+    </body>
+
+</html> 
