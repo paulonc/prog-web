@@ -1,11 +1,13 @@
 function verificaApresentacaoTCC(diaEntrega, prazoFinal) {
-  if (prazoFinal - diaEntrega >= 3) {
+  if (diaEntrega > prazoFinal) {
+    console.log("Eu odeio o prof. Florovsky!");
+  } else if (prazoFinal - diaEntrega >= 3) {
     console.log("Muito bem! O aluno está apto a apresentar até o natal!");
   } else {
     console.log("O trabalho está muito ruim!");
-    diaEntrega += 2;
+    prazoFinal += 2;
 
-    if (diaEntrega < 24) {
+    if (prazoFinal <= 24) {
       console.log("TCC Apresentado!");
     } else {
       console.log("Não deu! Só no próximo ano agora.");
@@ -16,3 +18,4 @@ function verificaApresentacaoTCC(diaEntrega, prazoFinal) {
 verificaApresentacaoTCC(13, 19);
 verificaApresentacaoTCC(22, 23);
 verificaApresentacaoTCC(21, 22);
+verificaApresentacaoTCC(24, 23);
